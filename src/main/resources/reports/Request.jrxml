@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Providers" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -75,184 +75,111 @@
 			<bottomPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<style name="Table 3_TH" mode="Opaque" backcolor="#F0F8FF">
-		<box>
-			<topPen lineWidth="0.5" lineColor="#000000"/>
-			<bottomPen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="Table 3_CH" mode="Opaque" backcolor="#1976D2">
-		<box>
-			<topPen lineWidth="0.5" lineColor="#000000"/>
-			<bottomPen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<style name="Table 3_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
-			<topPen lineWidth="0.5" lineColor="#000000"/>
-			<bottomPen lineWidth="0.5" lineColor="#000000"/>
-		</box>
-	</style>
-	<subDataset name="Request" uuid="66626118-e6d4-4676-959c-b0e581680a37">
-		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
-		<queryString language="SQL">
-			<![CDATA[SELECT id,
-	ammount,
-	"invoiceNumber",
-	"exchangeRate",
-	"emmissionDate",
-	currency,
-	"expenseType",
-	"providerId",
-	"paymentType",
-	"createdAt",
-	"updatedAt"
-FROM request
-WHERE 
-	 request."providerId" = '5' 
-ORDER BY request.ammount DESC]]>
-		</queryString>
-		<field name="id" class="java.lang.Integer">
-			<property name="com.jaspersoft.studio.field.name" value="id"/>
-			<property name="com.jaspersoft.studio.field.label" value="id"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="ammount" class="java.lang.Double">
-			<property name="com.jaspersoft.studio.field.name" value="ammount"/>
-			<property name="com.jaspersoft.studio.field.label" value="ammount"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="invoiceNumber" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="invoiceNumber"/>
-			<property name="com.jaspersoft.studio.field.label" value="invoiceNumber"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="exchangeRate" class="java.lang.Double">
-			<property name="com.jaspersoft.studio.field.name" value="exchangeRate"/>
-			<property name="com.jaspersoft.studio.field.label" value="exchangeRate"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="emmissionDate" class="java.sql.Timestamp">
-			<property name="com.jaspersoft.studio.field.name" value="emmissionDate"/>
-			<property name="com.jaspersoft.studio.field.label" value="emmissionDate"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="currency" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="currency"/>
-			<property name="com.jaspersoft.studio.field.label" value="currency"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="expenseType" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="expenseType"/>
-			<property name="com.jaspersoft.studio.field.label" value="expenseType"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="providerId" class="java.lang.Integer">
-			<property name="com.jaspersoft.studio.field.name" value="providerId"/>
-			<property name="com.jaspersoft.studio.field.label" value="providerId"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="paymentType" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="paymentType"/>
-			<property name="com.jaspersoft.studio.field.label" value="paymentType"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="createdAt" class="java.sql.Timestamp">
-			<property name="com.jaspersoft.studio.field.name" value="createdAt"/>
-			<property name="com.jaspersoft.studio.field.label" value="createdAt"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="updatedAt" class="java.sql.Timestamp">
-			<property name="com.jaspersoft.studio.field.name" value="updatedAt"/>
-			<property name="com.jaspersoft.studio.field.label" value="updatedAt"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<group name="id">
-			<groupExpression><![CDATA[$F{id}]]></groupExpression>
-		</group>
-		<group name="ammount">
-			<groupExpression><![CDATA[$F{ammount}]]></groupExpression>
-		</group>
-		<group name="invoiceNumber">
-			<groupExpression><![CDATA[$F{invoiceNumber}]]></groupExpression>
-		</group>
-		<group name="exchangeRate">
-			<groupExpression><![CDATA[$F{exchangeRate}]]></groupExpression>
-		</group>
-		<group name="emmissionDate">
-			<groupExpression><![CDATA[$F{emmissionDate}]]></groupExpression>
-		</group>
-		<group name="currency">
-			<groupExpression><![CDATA[$F{currency}]]></groupExpression>
-		</group>
-		<group name="expenseType">
-			<groupExpression><![CDATA[$F{expenseType}]]></groupExpression>
-		</group>
-		<group name="providerId">
-			<groupExpression><![CDATA[$F{providerId}]]></groupExpression>
-		</group>
-		<group name="paymentType">
-			<groupExpression><![CDATA[$F{paymentType}]]></groupExpression>
-		</group>
-		<group name="createdAt">
-			<groupExpression><![CDATA[$F{createdAt}]]></groupExpression>
-		</group>
-		<group name="updatedAt">
-			<groupExpression><![CDATA[$F{updatedAt}]]></groupExpression>
-		</group>
-	</subDataset>
-	<subDataset name="Provider" uuid="fa825898-ebe5-4c21-82ff-dcc71760ddf5">
-		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
-		<queryString language="SQL">
-			<![CDATA[SELECT name
-FROM provider
-WHERE 
-	 provider.id = '1']]>
-		</queryString>
-		<field name="name" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="name"/>
-			<property name="com.jaspersoft.studio.field.label" value="name"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
-		</field>
-		<group name="name">
-			<groupExpression><![CDATA[$F{name}]]></groupExpression>
-		</group>
-	</subDataset>
-	<parameter name="ID_PROVIDER" class="java.lang.Integer"/>
+	<style name="border-radius" radius="20"/>
+	<parameter name="REQUEST_ID" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[SELECT name
-FROM provider
-WHERE 
-	 provider.id =  $P{ID_PROVIDER}]]>
+		<![CDATA[select r.id as id, u.name as firstName, u.lastname as lastName, p.name as name, p.email as email, p.phone as phone, p.nit as nit, r."invoiceNumber" as bill, r.ammount as ammount, r."emmissionDate" as emmission, r."exchangeRate" as exchangeRate, r."expenseType" as expense, r."expirationDate" expiration from request r inner join provider p on r."providerId" = p.id inner join users u on u.id = r."userId" where r.id =  $P{REQUEST_ID}  LIMIT 1]]>
 	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="firstname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="firstname"/>
+		<property name="com.jaspersoft.studio.field.label" value="firstname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
+	<field name="lastname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lastname"/>
+		<property name="com.jaspersoft.studio.field.label" value="lastname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
 	<field name="name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="name"/>
 		<property name="com.jaspersoft.studio.field.label" value="name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
 	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
+	</field>
+	<field name="phone" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="phone"/>
+		<property name="com.jaspersoft.studio.field.label" value="phone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
+	</field>
+	<field name="nit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nit"/>
+		<property name="com.jaspersoft.studio.field.label" value="nit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
+	</field>
+	<field name="bill" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="bill"/>
+		<property name="com.jaspersoft.studio.field.label" value="bill"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="ammount" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="ammount"/>
+		<property name="com.jaspersoft.studio.field.label" value="ammount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="emmission" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="emmission"/>
+		<property name="com.jaspersoft.studio.field.label" value="emmission"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="exchangerate" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="exchangerate"/>
+		<property name="com.jaspersoft.studio.field.label" value="exchangerate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="expense" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="expense"/>
+		<property name="com.jaspersoft.studio.field.label" value="expense"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="expiration" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="expiration"/>
+		<property name="com.jaspersoft.studio.field.label" value="expiration"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="139" splitType="Stretch">
+		<band height="154" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="58" width="555" height="41" forecolor="#E0EED6" backcolor="#FFFFFF" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
-				<image>
-					<reportElement x="220" y="-60" width="120" height="60" uuid="97705585-a0b5-4ec7-86f3-ae10c220e6af"/>
-					<imageExpression><![CDATA["AppLogo.png"]]></imageExpression>
-				</image>
+				<reportElement mode="Opaque" x="0" y="60" width="555" height="68" forecolor="#E0EED6" backcolor="#FFFFFF" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
 				<textField>
 					<reportElement x="0" y="0" width="554" height="68" uuid="570981bc-66fe-4572-a366-fdda0637fcef"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA["REPORTE DE COMPRAS AL PROVEEDOR " + $F{name}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["SOLICITUD DE PAGO A PROVEEDORES"]]></textFieldExpression>
 				</textField>
 			</frame>
+			<image>
+				<reportElement x="220" y="0" width="120" height="60" uuid="97705585-a0b5-4ec7-86f3-ae10c220e6af"/>
+				<imageExpression><![CDATA["AppLogo.png"]]></imageExpression>
+			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="126" width="555" height="13" forecolor="#000000" backcolor="#1976D2" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
+				<reportElement style="border-radius" mode="Opaque" x="0" y="130" width="555" height="24" forecolor="#000000" backcolor="#1976D2" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
+				<textField>
+					<reportElement style="border-radius" x="280" y="0" width="274" height="24" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="afd88ad5-b237-4e78-9a3e-33402236cf5b"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Solicitud NO." + $F{id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="border-radius" x="0" y="0" width="274" height="24" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="73c6cbcc-c8a5-44b1-9a93-f613a116d56e"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Usuario Creador: " + $F{firstname} + " " + $F{lastname}]]></textFieldExpression>
+				</textField>
 			</frame>
 		</band>
 	</title>
@@ -260,154 +187,212 @@ WHERE
 		<band splitType="Stretch"/>
 	</pageHeader>
 	<detail>
-		<band height="326">
+		<band height="478">
 			<printWhenExpression><![CDATA[$V{REPORT_COUNT} == 1]]></printWhenExpression>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="226" uuid="5605facf-a898-4936-85f9-166a947f2280"/>
-				<componentElement>
-					<reportElement stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="0" y="10" width="555" height="190" isRemoveLineWhenBlank="true" uuid="bb761c5e-9517-4d08-b1fd-1f082d0a5d56">
-						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-						<property name="com.jaspersoft.studio.table.style.table_header" value="Table 3_TH"/>
-						<property name="com.jaspersoft.studio.table.style.column_header" value="Table 3_CH"/>
-						<property name="com.jaspersoft.studio.table.style.detail" value="Table 3_TD"/>
-					</reportElement>
-					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-						<datasetRun subDataset="Request" uuid="d09562dd-467a-4cad-8eab-63388a96610e">
-							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-						</datasetRun>
-						<jr:column width="22" uuid="157cbb24-212a-460b-91ae-dfe61c33b575">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="22" height="30" forecolor="#FFFFFF" uuid="8ba4b124-1e0c-4cbe-a64e-b793a0eb2d19"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[NO.]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="22" height="30" uuid="22c6c5f0-1f16-4ecc-8cd2-d0550fd6bfd0"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="148" uuid="d546c62a-fd57-4e91-838f-f040d5e959f6">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="148" height="30" forecolor="#FFFFFF" uuid="e9e04932-bd37-4a9f-9e24-43b6627e44d1"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[TIPO GASTO]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="148" height="30" uuid="26a9d98b-e945-4233-b046-823440d56d97"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{expenseType}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="70" uuid="704e8afa-a4e3-4d0c-8c50-43a8b51bce70">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="70" height="30" forecolor="#FFFFFF" uuid="0aa8a6a3-5d4d-479d-8140-2b627872ecb4"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[NO. FACTURA]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="70" height="30" uuid="2231faa2-3ca3-444a-b17c-1c2285a2ef47"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{invoiceNumber}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="70" uuid="59b9b637-c18f-4bb9-8513-0e1d6fafb1c8">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="70" height="30" forecolor="#FFFFFF" uuid="b1e1565e-4927-4ef5-b6a2-eeb5da99f43c"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[MONTO]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="70" height="30" uuid="eddbf277-a33d-48e9-ab2b-8daeda245a4c"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{ammount}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="70" uuid="1dc8115f-e3b4-4b4b-992e-fabbf9134bad">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="70" height="30" forecolor="#FFFFFF" uuid="e7d38cce-9189-4f12-adf0-80a73a1ec5ea"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[FECHA FACTURA]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="70" height="30" uuid="f934a02c-67bd-4d58-8910-59e96af29382"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{emmissionDate}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="64" uuid="ab0247a3-c878-4fc0-8630-7b243434fbd3">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="64" height="30" forecolor="#FFFFFF" uuid="9f222de7-48eb-44c0-8208-79bca772509f"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[MONEDA]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="64" height="30" uuid="761fae27-ae1c-499f-82a4-32c07164dca4"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="111" uuid="5e3bf88c-bd10-48b7-b531-458335f4b8d7">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="111" height="30" forecolor="#FFFFFF" uuid="ccfea005-b6f4-4cf8-a9c1-26a96a55bca0"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[TIPO PAGO]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="111" height="30" uuid="1defb69f-fe8a-4d89-89b0-8bf29f0b2602"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{paymentType}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-					</jr:table>
-				</componentElement>
+				<reportElement style="border-radius" mode="Opaque" x="0" y="0" width="555" height="30" forecolor="#000000" backcolor="#242424" uuid="1980d8e9-6974-4a84-a230-acddbc41ae42"/>
 			</frame>
+			<textField>
+				<reportElement style="border-radius" x="-1" y="0" width="554" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="a47ca1dc-e4d3-4d1a-9d48-d32f79a3ed82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Información del Proveedor"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="1" y="58" width="70" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="15655e84-1884-439a-829c-96aa2a537eb0"/>
+				<staticText>
+					<reportElement style="border-radius" x="-2" y="0" width="72" height="30" backcolor="#FFFFFF" uuid="a9d63a6d-2b2b-402f-bda8-58bf42c46630"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Nombre:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="1" y="178" width="555" height="30" forecolor="#000000" backcolor="#242424" uuid="042f6f59-f6f8-47a7-94ac-021f47cb1d41"/>
+				<textField>
+					<reportElement style="border-radius" x="-2" y="0" width="554" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="b898e782-7837-4c7e-a329-be147d1c25aa"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Información de la Factura"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="0" y="118" width="70" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="5601aaee-b120-482e-bc55-7928e7e05815"/>
+				<staticText>
+					<reportElement style="border-radius" x="0" y="0" width="69" height="30" backcolor="#FFFFFF" uuid="adccadb7-c0d5-472b-a612-6d07e3dd561c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Correo:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="229" y="118" width="70" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="74af1373-619b-4264-87cd-1be6368012a2"/>
+				<staticText>
+					<reportElement style="border-radius" x="1" y="0" width="69" height="30" backcolor="#FFFFFF" uuid="428bcae0-34bb-4c97-9fa5-46990b3d0aed"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Teléfono:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="389" y="118" width="70" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="fcc0fb78-da35-4f27-a794-8b11195b1503"/>
+				<staticText>
+					<reportElement style="border-radius" x="1" y="0" width="69" height="30" backcolor="#FFFFFF" uuid="10de8100-d59d-4089-a439-af0be9e7da1a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[NIT:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="-2" y="230" width="100" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="3ec5544f-3a37-4ba4-9dc5-22f49a1c4957"/>
+				<staticText>
+					<reportElement style="border-radius" x="1" y="0" width="99" height="30" backcolor="#FFFFFF" uuid="42ddd91a-2a4c-4828-a338-26f8342399ee"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[No. de Factura:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="-2" y="230" width="100" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="05ffbc5d-cdee-4633-9487-f839d96df49f"/>
+				<staticText>
+					<reportElement style="border-radius" x="1" y="0" width="99" height="30" backcolor="#FFFFFF" uuid="b4b51a8c-2995-4323-9c46-8ca227d19e74"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[No. de Factura:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="198" y="230" width="61" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="41fae32a-bbc0-4e73-a170-75208cd7eafa"/>
+				<staticText>
+					<reportElement style="border-radius" x="0" y="0" width="60" height="30" backcolor="#FFFFFF" uuid="3e069d53-e985-47ad-a421-6c43db55b4b1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Monto:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="-2" y="285" width="111" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="042330bd-ca2b-47dd-a0f4-33eca73f3945"/>
+				<staticText>
+					<reportElement style="border-radius" x="0" y="0" width="110" height="30" backcolor="#FFFFFF" uuid="0b9ebd08-225f-42af-9578-be01a5c45214"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Tasa de Cambio:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="359" y="230" width="104" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="6d5b44a8-d931-45f7-8233-692ae8a20c64"/>
+				<staticText>
+					<reportElement style="border-radius" x="0" y="0" width="103" height="30" backcolor="#FFFFFF" uuid="2e662ddc-0348-462f-bb8e-310a816491d3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Fecha Emisión:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="196" y="285" width="111" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="06ad3ace-68c3-490b-ae6a-9ed1c77fcd03"/>
+				<staticText>
+					<reportElement style="border-radius" x="0" y="0" width="110" height="30" backcolor="#FFFFFF" uuid="fbe3eb1f-8c5b-4b5a-93f8-35f3c5310faf"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Tipo de Gasto:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement style="border-radius" mode="Opaque" x="-3" y="343" width="151" height="30" forecolor="#000000" backcolor="#A1A1A1" uuid="6d7e6281-5382-4556-a2a0-4c8e7b9277e6"/>
+				<staticText>
+					<reportElement style="border-radius" x="0" y="0" width="150" height="30" backcolor="#FFFFFF" uuid="c6dda8fe-e170-4db3-9218-d58e154dbba9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Fecha de Vencimiento:]]></text>
+				</staticText>
+			</frame>
+			<textField>
+				<reportElement style="border-radius" x="80" y="58" width="300" height="30" uuid="977dec21-c9e2-4fac-9b66-9a6e3211ad76"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="80" y="118" width="149" height="30" uuid="4cf5e3fd-b944-46d5-b3cc-0da5e0c1fb74"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="304" y="118" width="80" height="30" uuid="22f436c8-b032-469c-8cc5-cc88fcedaaab"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="470" y="118" width="83" height="30" uuid="e5730d79-7063-4159-8f8e-ef9e87bfa45d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="110" y="230" width="80" height="30" uuid="9cc0c9d8-4aa9-4df0-b8ee-4990214a82ba"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="270" y="230" width="80" height="30" uuid="9e36bf6c-6bd0-4d1c-93ee-9470c949c062"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ammount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="471" y="230" width="80" height="30" uuid="0bf03fa7-796b-4d95-a234-8639667dbd95"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emmission}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="320" y="285" width="231" height="30" uuid="9932fbb9-8860-4df7-981b-029c50160efe"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{expense}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="border-radius" x="116" y="285" width="80" height="30" uuid="ba0ebaaf-2819-4c51-83cd-ba0ed57e9684"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{exchangerate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="160" y="343" width="80" height="30" uuid="055e732d-42f4-4e45-975f-40e488d52f44"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{expiration}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
-			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1133a906-5b71-476e-9f3e-bc97c97058c1"/>
-				<graphicElement>
-					<pen lineWidth="0.5" lineColor="#999999"/>
-				</graphicElement>
-			</line>
-		</band>
+		<band height="7" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
 		<band height="25" splitType="Stretch">

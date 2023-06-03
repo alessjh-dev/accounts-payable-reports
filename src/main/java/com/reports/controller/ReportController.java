@@ -44,7 +44,7 @@ public class ReportController {
         Map<String, Object> params = new HashMap<>();
         Connection conn = getConnection();
         params.put("REPORT_CONNECTION", conn);
-        params.put("ID_PROVIDER", id);
+        params.put("REQUEST_ID", id);
         JasperPrint jasperPrint = JasperFillManager.fillReport(REQUEST_REPORT, params, conn);
         byte[] reportBytes = JasperExportManager.exportReportToPdf(jasperPrint);
         HttpHeaders headers = new HttpHeaders();
@@ -81,9 +81,9 @@ public class ReportController {
     }
 
     private Connection getConnection() throws SQLException {
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
-        String password = "alessandro";
+        String url = "jdbc:postgresql://mahmud.db.elephantsql.com:5432/kqznpuxb";
+        String user = "kqznpuxb";
+        String password = "lXzlkz5CEsV7LFDdNq61jzSVAdmbj65K";
         return DriverManager.getConnection(url, user, password);
     }
 }
