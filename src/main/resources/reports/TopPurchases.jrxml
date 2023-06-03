@@ -206,7 +206,7 @@ FROM request LIMIT 10]]>
 			<![CDATA[SELECT name
 FROM provider
 WHERE 
-	 provider.id = '1']]>
+	 provider.id = '13']]>
 		</queryString>
 		<field name="name" class="java.lang.String">
 			<property name="com.jaspersoft.studio.field.name" value="name"/>

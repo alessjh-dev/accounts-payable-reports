@@ -97,25 +97,19 @@
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
 		<queryString language="SQL">
-			<![CDATA[SELECT 
-row_number() OVER (ORDER BY r.ammount DESC) AS id, 
-p.name as proveedor, 
-r."expenseType" as pago, 
-r."invoiceNumber" as factura, 
-r.ammount as monto, 
-r.currency as moneda 
-FROM 
-PROVIDER p 
-INNER JOIN 
-REQUEST r 
-ON 
-p.id = r."providerId" 
-group by p.id, p.name, 
-r."expenseType", 
-r."invoiceNumber", 
-r.ammount, r.currency LIMIT 10]]>
+			<![CDATA[SELECT
+row_number() OVER (ORDER BY SUM(r.ammount) DESC) AS id,
+p.name as proveedor,
+SUM(r.ammount) as monto
+FROM
+PROVIDER p
+INNER JOIN
+REQUEST r
+ON
+p.id = r."providerId"
+group by p.id, p.name LIMIT 10]]>
 		</queryString>
-		<field name="id" class="java.lang.Integer">
+		<field name="id" class="java.lang.Long">
 			<property name="com.jaspersoft.studio.field.name" value="id"/>
 			<property name="com.jaspersoft.studio.field.label" value="id"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
@@ -123,26 +117,11 @@ r.ammount, r.currency LIMIT 10]]>
 		<field name="proveedor" class="java.lang.String">
 			<property name="com.jaspersoft.studio.field.name" value="proveedor"/>
 			<property name="com.jaspersoft.studio.field.label" value="proveedor"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="pago" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="pago"/>
-			<property name="com.jaspersoft.studio.field.label" value="pago"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="factura" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="factura"/>
-			<property name="com.jaspersoft.studio.field.label" value="factura"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
 		</field>
 		<field name="monto" class="java.lang.Double">
 			<property name="com.jaspersoft.studio.field.name" value="monto"/>
 			<property name="com.jaspersoft.studio.field.label" value="monto"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
-		</field>
-		<field name="moneda" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="moneda"/>
-			<property name="com.jaspersoft.studio.field.label" value="moneda"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
 		</field>
 	</subDataset>
@@ -150,73 +129,18 @@ r.ammount, r.currency LIMIT 10]]>
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
 		<queryString language="SQL">
-			<![CDATA[SELECT 
-row_number() OVER (ORDER BY r.ammount DESC) AS id, 
-p.name as proveedor, 
-r."expenseType" as pago, 
-r."invoiceNumber" as factura, 
-r.ammount as monto, 
-r.currency as moneda 
-FROM 
-PROVIDER p 
-INNER JOIN 
-REQUEST r 
-ON 
-p.id = r."providerId" 
-group by p.id, p.name, 
-r."expenseType", 
-r."invoiceNumber", 
-r.ammount, r.currency
-C]]>
+			<![CDATA[SELECT
+row_number() OVER (ORDER BY SUM(r.ammount) DESC) AS id,
+p.name as proveedor,
+SUM(r.ammount) as monto
+FROM
+PROVIDER p
+INNER JOIN
+REQUEST r
+ON
+p.id = r."providerId"
+group by p.id, p.name LIMIT 10]]>
 		</queryString>
-		<field name="id" class="java.lang.Integer">
-			<property name="com.jaspersoft.studio.field.name" value="id"/>
-			<property name="com.jaspersoft.studio.field.label" value="id"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
-		</field>
-		<field name="name" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="name"/>
-			<property name="com.jaspersoft.studio.field.label" value="name"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
-		</field>
-		<field name="phone" class="java.lang.Integer">
-			<property name="com.jaspersoft.studio.field.name" value="phone"/>
-			<property name="com.jaspersoft.studio.field.label" value="phone"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
-		</field>
-		<field name="email" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="email"/>
-			<property name="com.jaspersoft.studio.field.label" value="email"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
-		</field>
-		<field name="nit" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="nit"/>
-			<property name="com.jaspersoft.studio.field.label" value="nit"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
-		</field>
-		<field name="lineOfBusiness" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="lineOfBusiness"/>
-			<property name="com.jaspersoft.studio.field.label" value="lineOfBusiness"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="provider"/>
-		</field>
-		<group name="id">
-			<groupExpression><![CDATA[$F{id}]]></groupExpression>
-		</group>
-		<group name="name">
-			<groupExpression><![CDATA[$F{name}]]></groupExpression>
-		</group>
-		<group name="phone">
-			<groupExpression><![CDATA[$F{phone}]]></groupExpression>
-		</group>
-		<group name="email">
-			<groupExpression><![CDATA[$F{email}]]></groupExpression>
-		</group>
-		<group name="nit">
-			<groupExpression><![CDATA[$F{nit}]]></groupExpression>
-		</group>
-		<group name="lineOfBusiness">
-			<groupExpression><![CDATA[$F{lineOfBusiness}]]></groupExpression>
-		</group>
 	</subDataset>
 	<queryString>
 		<![CDATA[SELECT id,
@@ -288,88 +212,37 @@ ORDER BY provider.id ASC]]>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
-						<jr:column width="158" uuid="d546c62a-fd57-4e91-838f-f040d5e959f6">
+						<jr:column width="408" uuid="d546c62a-fd57-4e91-838f-f040d5e959f6">
 							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
 								<staticText>
-									<reportElement x="0" y="0" width="158" height="30" forecolor="#FFFFFF" uuid="e9e04932-bd37-4a9f-9e24-43b6627e44d1"/>
+									<reportElement x="0" y="0" width="408" height="30" forecolor="#FFFFFF" uuid="e9e04932-bd37-4a9f-9e24-43b6627e44d1"/>
 									<textElement textAlignment="Center" verticalAlignment="Middle"/>
 									<text><![CDATA[PROVEEDOR]]></text>
 								</staticText>
 							</jr:columnHeader>
 							<jr:detailCell style="Table 3_TD" height="30">
 								<textField>
-									<reportElement x="0" y="0" width="158" height="30" uuid="26a9d98b-e945-4233-b046-823440d56d97"/>
+									<reportElement x="0" y="0" width="408" height="30" uuid="26a9d98b-e945-4233-b046-823440d56d97"/>
 									<textElement textAlignment="Center" verticalAlignment="Middle"/>
 									<textFieldExpression><![CDATA[$F{proveedor}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
-						<jr:column width="150" uuid="704e8afa-a4e3-4d0c-8c50-43a8b51bce70">
+						<jr:column width="155" uuid="ab0247a3-c878-4fc0-8630-7b243434fbd3">
 							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
 							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
 								<staticText>
-									<reportElement x="0" y="0" width="150" height="30" forecolor="#FFFFFF" uuid="0aa8a6a3-5d4d-479d-8140-2b627872ecb4"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[TIPO DE PAGO]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="150" height="30" uuid="2231faa2-3ca3-444a-b17c-1c2285a2ef47"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{pago}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="90" uuid="59b9b637-c18f-4bb9-8513-0e1d6fafb1c8">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="90" height="30" forecolor="#FFFFFF" uuid="9f222de7-48eb-44c0-8208-79bca772509f"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[MONEDA]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="90" height="30" uuid="761fae27-ae1c-499f-82a4-32c07164dca4"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{moneda}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="70" uuid="1dc8115f-e3b4-4b4b-992e-fabbf9134bad">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="70" height="30" forecolor="#FFFFFF" uuid="e7d38cce-9189-4f12-adf0-80a73a1ec5ea"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<text><![CDATA[FACTURA]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="Table 3_TD" height="30">
-								<textField>
-									<reportElement x="0" y="0" width="70" height="30" uuid="eddbf277-a33d-48e9-ab2b-8daeda245a4c"/>
-									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{factura}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="64" uuid="ab0247a3-c878-4fc0-8630-7b243434fbd3">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
-							<jr:columnHeader style="Table 3_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="64" height="30" forecolor="#FFFFFF" uuid="b1e1565e-4927-4ef5-b6a2-eeb5da99f43c"/>
+									<reportElement x="0" y="0" width="155" height="30" forecolor="#FFFFFF" uuid="b1e1565e-4927-4ef5-b6a2-eeb5da99f43c"/>
 									<textElement textAlignment="Center" verticalAlignment="Middle"/>
 									<text><![CDATA[MONTO]]></text>
 								</staticText>
 							</jr:columnHeader>
 							<jr:detailCell style="Table 3_TD" height="30">
 								<textField>
-									<reportElement x="0" y="0" width="64" height="30" uuid="f934a02c-67bd-4d58-8910-59e96af29382"/>
+									<reportElement x="0" y="0" width="155" height="30" uuid="f934a02c-67bd-4d58-8910-59e96af29382"/>
 									<textElement textAlignment="Center" verticalAlignment="Middle"/>
-									<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+									<textFieldExpression><![CDATA["Q." + $F{monto}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>

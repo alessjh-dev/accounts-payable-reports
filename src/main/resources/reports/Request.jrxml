@@ -78,11 +78,21 @@
 	<style name="border-radius" radius="20"/>
 	<parameter name="REQUEST_ID" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[select r.id as id, u.name as firstName, u.lastname as lastName, p.name as name, p.email as email, p.phone as phone, p.nit as nit, r."invoiceNumber" as bill, r.ammount as ammount, r."emmissionDate" as emmission, r."exchangeRate" as exchangeRate, r."expenseType" as expense, r."expirationDate" expiration from request r inner join provider p on r."providerId" = p.id inner join users u on u.id = r."userId" where r.id =  $P{REQUEST_ID}  LIMIT 1]]>
+		<![CDATA[select r.id as id, r."billType" as billType, r."specialCategory" as specialCategory, u.name as firstName, u.lastname as lastName, p.name as name, p.email as email, p.phone as phone, p.nit as nit, r."invoiceNumber" as bill, r.ammount as ammount, r."emmissionDate" as emmission, r."exchangeRate" as exchangeRate, r."expenseType" as expense, r."expirationDate" expiration from request r inner join provider p on r."providerId" = p.id inner join users u on u.id = r."userId" where r.id =  $P{REQUEST_ID}  LIMIT 1]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="billtype" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="billtype"/>
+		<property name="com.jaspersoft.studio.field.label" value="billtype"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
+	</field>
+	<field name="specialcategory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="specialcategory"/>
+		<property name="com.jaspersoft.studio.field.label" value="specialcategory"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="request"/>
 	</field>
 	<field name="firstname" class="java.lang.String">
@@ -388,6 +398,15 @@
 					<font size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{expiration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="border-radius" x="240" y="30" width="315" height="30" uuid="c400d547-39e4-4ead-ab9f-d164c6f0a994">
+					<printWhenExpression><![CDATA[$F{billtype}.equals("ESPECIAL")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Factura especial, categoría: " + $F{specialcategory}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
