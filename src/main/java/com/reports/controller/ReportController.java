@@ -71,7 +71,7 @@ public class ReportController {
         Map<String, Object> params = new HashMap<>();
         Connection conn = getConnection();
         params.put("REPORT_CONNECTION", conn);
-        params.put("ID_PROVIDER", 5);
+        params.put("ID_PROVIDER", 13);
         JasperPrint jasperPrint = JasperFillManager.fillReport(TOP_PURCHASES_REPORT, params, conn);
         byte[] reportBytes = JasperExportManager.exportReportToPdf(jasperPrint);
         HttpHeaders headers = new HttpHeaders();
